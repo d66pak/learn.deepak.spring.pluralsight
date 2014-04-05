@@ -12,6 +12,14 @@ public class CustomerServiceImpl implements CustomerService {
 
     private CustomerRepository customerRepository;
 
+    /**
+     * Constructor required for spring constructor injection
+     * @param customerRepository the customer repo to be used
+     */
+    public CustomerServiceImpl(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
     @Override
     public List<Customer> findCustomers() {
 

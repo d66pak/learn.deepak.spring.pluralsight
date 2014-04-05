@@ -7,6 +7,6 @@
     <bean name="customerRepository" class="learn.deepak.spring.pluralsight.repository.HibernateCustomerRepositoryImpl"/>
 
     <bean name="customerService" class="learn.deepak.spring.pluralsight.service.CustomerServiceImpl">
-        <property name="customerRepository" ref="customerRepository"/>
+        <constructor-arg index="0" ref="customerRepository"/>
     </bean>
 </beans>

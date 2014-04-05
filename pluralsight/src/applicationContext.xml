@@ -6,7 +6,7 @@
 
     <bean name="customerRepository" class="learn.deepak.spring.pluralsight.repository.HibernateCustomerRepositoryImpl"/>
 
-    <bean name="customerService" class="learn.deepak.spring.pluralsight.service.CustomerServiceImpl" autowire="constructor">
+    <bean name="customerService" class="learn.deepak.spring.pluralsight.service.CustomerServiceImpl" autowire="byName">
         <!--<constructor-arg index="0" ref="customerRepository"/>-->
     </bean>
 </beans>

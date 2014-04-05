@@ -13,6 +13,12 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
     /**
+     * Default constructor require for autowire byType/byName
+     */
+    public CustomerServiceImpl() {
+    }
+
+    /**
      * Constructor required for spring constructor injection
      * @param customerRepository the customer repo to be used
      */
@@ -28,6 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     /**
      * Setter method for spring setter injection
+     * Also require for autowire byType/byName
      *
      * @param customerRepository the customer repo to be used
      */

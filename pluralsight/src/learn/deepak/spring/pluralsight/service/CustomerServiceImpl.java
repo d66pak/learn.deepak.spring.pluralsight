@@ -2,7 +2,6 @@ package learn.deepak.spring.pluralsight.service;
 
 import learn.deepak.spring.pluralsight.model.Customer;
 import learn.deepak.spring.pluralsight.repository.CustomerRepository;
-import learn.deepak.spring.pluralsight.repository.HibernateCustomerRepositoryImpl;
 
 import java.util.List;
 
@@ -11,11 +10,20 @@ import java.util.List;
  */
 public class CustomerServiceImpl implements CustomerService {
 
+    private CustomerRepository customerRepository;
+
     @Override
     public List<Customer> findCustomers() {
 
-        CustomerRepository cr = new HibernateCustomerRepositoryImpl();
+        return customerRepository.findCustomers();
+    }
 
-        return cr.findCustomers();
+    /**
+     * Setter method for spring setter injection
+     *
+     * @param customerRepository the customer repo to be used
+     */
+    public void setCustomerRepository(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 }

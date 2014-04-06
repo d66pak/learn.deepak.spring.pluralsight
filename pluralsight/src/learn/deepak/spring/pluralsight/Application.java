@@ -2,6 +2,7 @@ package learn.deepak.spring.pluralsight;
 
 import learn.deepak.spring.pluralsight.service.CustomerService;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -14,7 +15,11 @@ public class Application {
         //CustomerService service = new CustomerServiceImpl();
 
         // Inject customer service implementation
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        // Use app config java instead of xml config
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
         CustomerService service = applicationContext.getBean("customerService", CustomerService.class);
 
         System.out.println(service.findCustomers().get(0).getFirstName());

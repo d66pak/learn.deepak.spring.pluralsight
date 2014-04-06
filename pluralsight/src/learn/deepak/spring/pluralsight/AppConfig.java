@@ -7,6 +7,8 @@ import learn.deepak.spring.pluralsight.service.CustomerServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 /**
  * Application configuration class (Java configuration)
@@ -16,9 +18,15 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan({"learn.deepak.spring.pluralsight"}) // component scan autowired
+@PropertySource("app.properties") // java config
 public class AppConfig {
 
 
+    // Required to read app.properties
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
     @Bean(name="customerService")
     public CustomerService getCustomerService() {
         // constructor injection

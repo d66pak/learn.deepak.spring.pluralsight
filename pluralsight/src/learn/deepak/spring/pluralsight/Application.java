@@ -22,6 +22,13 @@ public class Application {
 
         CustomerService service = applicationContext.getBean("customerService", CustomerService.class);
 
+        // To check the scope
+        CustomerService service1 = applicationContext.getBean("customerService", CustomerService.class);
+
+        // For singleton scope same address should be printed
+        System.out.println(service);
+        System.out.println(service1);
+
         System.out.println(service.findCustomers().get(0).getFirstName());
     }
 }

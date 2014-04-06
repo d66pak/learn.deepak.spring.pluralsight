@@ -3,6 +3,7 @@ package learn.deepak.spring.pluralsight.service;
 import learn.deepak.spring.pluralsight.model.Customer;
 import learn.deepak.spring.pluralsight.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * Created by dtelkar on 4/5/14.
  */
 @Service("customerService") // class level annotation
+@Scope("singleton") // always same instance is returned
 public class CustomerServiceImpl implements CustomerService {
 
     //@Autowired // member variable injection

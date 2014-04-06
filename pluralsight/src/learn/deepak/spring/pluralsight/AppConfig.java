@@ -18,7 +18,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  */
 @Configuration
 @ComponentScan({"learn.deepak.spring.pluralsight"}) // component scan autowired
-@PropertySource("app.properties") // java config
+//@PropertySource("app.properties") // java config
 public class AppConfig {
 
 

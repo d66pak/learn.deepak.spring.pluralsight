@@ -12,6 +12,7 @@
     <bean name="customerService" class="learn.deepak.spring.pluralsight.service.CustomerServiceImpl" autowire="byName" scope="prototype">
     </bean>
 
-    <!--<context:annotation-config/>-->
-    <!--<context:component-scan base-package="learn.deepak.spring.pluralsight" />-->
+    <context:annotation-config/>
+    <context:component-scan base-package="learn.deepak.spring.pluralsight" />
+    <context:property-placeholder location="app.properties"/>
 </beans>

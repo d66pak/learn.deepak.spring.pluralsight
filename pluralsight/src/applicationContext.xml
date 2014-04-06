@@ -7,11 +7,11 @@
 	   					   http://www.springframework.org/schema/context
 	   					   http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-    <!--<bean name="customerRepository" class="learn.deepak.spring.pluralsight.repository.HibernateCustomerRepositoryImpl"/>-->
+    <bean name="customerRepository" class="learn.deepak.spring.pluralsight.repository.HibernateCustomerRepositoryImpl"/>
 
-    <!--<bean name="customerService" class="learn.deepak.spring.pluralsight.service.CustomerServiceImpl" autowire="byName">-->
-    <!--</bean>-->
+    <bean name="customerService" class="learn.deepak.spring.pluralsight.service.CustomerServiceImpl" autowire="byName" scope="singleton">
+    </bean>
 
-    <context:annotation-config/>
-    <context:component-scan base-package="learn.deepak.spring.pluralsight" />
+    <!--<context:annotation-config/>-->
+    <!--<context:component-scan base-package="learn.deepak.spring.pluralsight" />-->
 </beans>

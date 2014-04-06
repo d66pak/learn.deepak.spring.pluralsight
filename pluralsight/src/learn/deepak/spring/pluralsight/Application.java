@@ -26,6 +26,7 @@ public class Application {
         CustomerService service1 = applicationContext.getBean("customerService", CustomerService.class);
 
         // For singleton scope same address should be printed
+        // For prototype scope different address should be printed
         System.out.println(service);
         System.out.println(service1);
 

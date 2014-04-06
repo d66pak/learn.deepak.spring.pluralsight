@@ -9,7 +9,7 @@
 
     <bean name="customerRepository" class="learn.deepak.spring.pluralsight.repository.HibernateCustomerRepositoryImpl"/>
 
-    <bean name="customerService" class="learn.deepak.spring.pluralsight.service.CustomerServiceImpl" autowire="byName" scope="singleton">
+    <bean name="customerService" class="learn.deepak.spring.pluralsight.service.CustomerServiceImpl" autowire="byName" scope="prototype">
     </bean>
 
     <!--<context:annotation-config/>-->

@@ -15,10 +15,10 @@ public class Application {
         //CustomerService service = new CustomerServiceImpl();
 
         // Inject customer service implementation
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         // Use app config java instead of xml config
-//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
         CustomerService service = applicationContext.getBean("customerService", CustomerService.class);
 

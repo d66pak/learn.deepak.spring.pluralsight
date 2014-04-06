@@ -12,7 +12,7 @@ import java.util.List;
  * Created by dtelkar on 4/5/14.
  */
 @Service("customerService") // class level annotation
-@Scope("singleton") // always same instance is returned
+@Scope("prototype") // always different instance is returned
 public class CustomerServiceImpl implements CustomerService {
 
     //@Autowired // member variable injection

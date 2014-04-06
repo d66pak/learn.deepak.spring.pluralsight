@@ -5,6 +5,7 @@ import learn.deepak.spring.pluralsight.repository.HibernateCustomerRepositoryImp
 import learn.deepak.spring.pluralsight.service.CustomerService;
 import learn.deepak.spring.pluralsight.service.CustomerServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -14,13 +15,14 @@ import org.springframework.context.annotation.Configuration;
  * Created by dtelkar on 4/6/14.
  */
 @Configuration
+@ComponentScan({"learn.deepak.spring.pluralsight"}) // component scan autowired
 public class AppConfig {
 
 
     @Bean(name="customerService")
     public CustomerService getCustomerService() {
         // constructor injection
-        CustomerServiceImpl customerService = new CustomerServiceImpl(getCustomerRepository());
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
         // setter injection
 //        customerService.setCustomerRepository(getCustomerRepository());
 
